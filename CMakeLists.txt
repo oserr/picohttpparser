@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(picohttpparser)
+project(picohttpparser CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -25,4 +25,5 @@ else()
   target_compile_options(picohttpparser PRIVATE -Wall -Wextra -Wpedantic -Ofast)
 endif()
 
-target_compile_features(picohttpparser PRIVATE)
+set_target_properties(picohttpparser PROPERTIES LINKER_LANGUAGE CXX)
+target_compile_features(picohttpparser PUBLIC cxx_std_20)
