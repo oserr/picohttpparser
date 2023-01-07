@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(picohttpparser CXX)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(picohttpparser C)
 
 if (NOT CMAKE_BUILD_TYPE OR (CMAKE_BUILD_TYPE STREQUAL ""))
   set(CMAKE_BUILD_TYPE "Debug")
@@ -24,6 +22,3 @@ else()
   target_compile_definitions(picohttpparser PRIVATE NDEBUG)
   target_compile_options(picohttpparser PRIVATE -Wall -Wextra -Wpedantic -Ofast)
 endif()
-
-set_target_properties(picohttpparser PROPERTIES LINKER_LANGUAGE CXX)
-target_compile_features(picohttpparser PUBLIC cxx_std_20)
